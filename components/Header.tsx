@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {inDevEnvironment} from '../lib/DevEnv';
 
 const Header: React.FC = () => {
   const router = useRouter();
@@ -14,11 +15,14 @@ const Header: React.FC = () => {
             Notes
           </a>
         </Link>
+        {inDevEnvironment &&
         <Link href="/drafts">
           <a data-active={isActive("/drafts")}>Drafts</a>
         </Link>
+        }
       </div>
     );
+    
     let right = (
       <div className="space-x-2">
         <Link href="/create">
@@ -33,7 +37,7 @@ const Header: React.FC = () => {
   return (
     <nav className="flex justify-between p-2">
       {left}
-      {right}
+      {inDevEnvironment && right}
     </nav>
   );
 };

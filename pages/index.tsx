@@ -32,7 +32,10 @@ const Home: React.FC<Props> = (props) => {
         <h1>{name}'s Notes</h1>
         <p>{description}</p>
         <main>
-          {props.feed.map((post) => (
+           {
+              props.feed.length == 0 ? <p>(Nothing to see here) ʕ•ᴥ•ʔ</p> 
+              :
+              props.feed.map((post) => (
             <div key={post.id} className="m-2 border-b-2">
               <Post post={post} />
             </div>

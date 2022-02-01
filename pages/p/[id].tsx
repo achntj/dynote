@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import Router from "next/router";
 import { PostProps } from "../../components/Post";
 import prisma from '../../lib/prisma'
+import {inDevEnvironment} from '../../lib/DevEnv';
 
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -43,13 +44,25 @@ const Post: React.FC<PostProps> = (props) => {
   return (
     <Layout>
       <div>
+        {props.published || inDevEnvironment ?  (
+          <>
         <h2>{title}</h2>
         <ReactMarkdown children={props.content} />
+        </>
+        )
+      :
+      <>
+      <h2>Unauthorized</h2>
+      <p>This post is still a draft, so you can't see it yet!</p>
+      </>
+      }
         <div className="space-x-2 mt-5">
-        {!props.published && (
+        {!props.published  && inDevEnvironment && (
           <button onClick={() => publishPost(props.id)}><a>Publish</a></button>
         )}
+        { inDevEnvironment &&
           <button onClick={() => deletePost(props.id)}><a>Delete</a></button>
+        }
         </div>
       </div>      
     </Layout>
