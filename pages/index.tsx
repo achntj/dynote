@@ -6,21 +6,16 @@ import prisma from '../lib/prisma'
 var config = require('../config.json');
 
 const name = config.name;
+const description = config.description;
 
 
 export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
+  let feed = await prisma.post.findMany({
     where: {
       published: true,
-    },
-    include: {
-      author: {
-        select: {
-          name: true,
-        },
-      },
-    },
+    }, 
   });
+  feed = JSON.parse(JSON.stringify(feed));
   return {
     props: { feed },
   };
@@ -35,6 +30,7 @@ const Home: React.FC<Props> = (props) => {
     <Layout>
       <div>
         <h1>{name}'s Notes</h1>
+        <p>{description}</p>
         <main>
           {props.feed.map((post) => (
             <div key={post.id} className="m-2 border-b-2">

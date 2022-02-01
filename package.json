@@ -19,6 +19,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "7.1.2",
+    "superjson": "^1.8.0",
     "tailwindcss": "^3.0.18"
   },
   "devDependencies": {
@@ -26,11 +27,9 @@
     "@types/next-auth": "3.13.0",
     "@types/node": "16.11.21",
     "@types/react": "17.0.38",
+    "babel-plugin-superjson-next": "^0.4.2",
     "prisma": "3.8.1",
     "ts-node": "10.4.0",
     "typescript": "4.5.5"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   }
 }
