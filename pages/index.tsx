@@ -33,7 +33,7 @@ type Props = {
 const Home: React.FC<Props> = (props) => {
   return (
     <Layout>
-      <div className="p-10 prose">
+      <div>
         <h1>{name}'s Notes</h1>
         <main>
           {props.feed.map((post) => (

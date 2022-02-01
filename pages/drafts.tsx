@@ -4,10 +4,6 @@ import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import { useSession, getSession } from "next-auth/react";
 import prisma from '../lib/prisma'
-const config = require('config');
-
-let appPort = config.get('app.port');
-console.log(`Application port: ${appPort}`);
 
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
@@ -51,7 +47,7 @@ const Drafts: React.FC<Props> = (props) => {
 
   return (
     <Layout>
-      <div className="p-10">
+      <div>
         <h1>Drafts</h1>
         <main>
           {
