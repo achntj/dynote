@@ -1,3 +1,7 @@
+var config = require("./config.json");
+
+const linkColor = config.linkColor;
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx, mdx}",
@@ -26,6 +30,7 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
+              color: linkColor || "rgb(14 165 233 / 1)",
               textDecoration: "none",
             },
             p: {

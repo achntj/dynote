@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   
 
   return (
-    <nav className="flex justify-between p-2">
+    <nav className="flex justify-between p-2 px-4">
       {left}
       {inDevEnvironment && right}
     </nav>

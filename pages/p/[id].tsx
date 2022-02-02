@@ -46,16 +46,7 @@ const Post: React.FC<PostProps> = (props) => {
       <div>
         {props.published || inDevEnvironment ?  (
           <>
-        <h2>{title}</h2>
-        <ReactMarkdown children={props.content} />
-        </>
-        )
-      :
-      <>
-      <h2>Unauthorized</h2>
-      <p>This post is still a draft, so you can't see it yet!</p>
-      </>
-      }
+        <h1>{title}</h1>
         <div className="space-x-2 mt-5">
         {!props.published  && inDevEnvironment && (
           <button onClick={() => publishPost(props.id)}><a>Publish</a></button>
@@ -64,6 +55,17 @@ const Post: React.FC<PostProps> = (props) => {
           <button onClick={() => deletePost(props.id)}><a>Delete</a></button>
         }
         </div>
+        <div className="entry">
+        <ReactMarkdown children={props.content} />
+        </div>
+        </>
+        )
+      :
+      <>
+      <h2>Unauthorized</h2>
+      <p>This post is still a draft, so you can't see it yet!</p>
+      </>
+      }
       </div>      
     </Layout>
   );
