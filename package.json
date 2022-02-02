@@ -1,10 +1,10 @@
 {
-  "name": "hello-next",
+  "name": "dynote",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "license": "MIT",
-  "author": "",
+  "author": "achintyajha",
   "scripts": {
     "dev": "next",
     "build": "next build",
