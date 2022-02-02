@@ -39,5 +39,9 @@ Add the database URL to your .env file. (Rename .env.example to .env)
 
 Great! This was just a one-time setup. Now you can start writing from the 'New Post' option. For configuration, you can change the name and description on the home page through the `config.json` file.
 
-Now create a new github repository and add it as a remote repository to this project. Once you push the changes, deployment is simple.
+Now create a new github repository and add it as a remote repository to this project. Once you push the changes, deployment is easy with vercel.
+
+## Deployment
+
+- Login to Vercel and create a new project with your github repository. Add the Database URL (that you added in the .env file) to the vercel environment variables. That's it, your project is now available online!
 
