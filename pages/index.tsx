@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import prisma from '../lib/prisma'
 var config = require('../config.json');
+import { sortByDate } from "../utils";
 
 const name = config.name;
 const description = config.description;
@@ -17,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   });
   feed = JSON.parse(JSON.stringify(feed));
   return {
-    props: { feed },
+    props: { feed: feed.sort(sortByDate) },
   };
 };
 
