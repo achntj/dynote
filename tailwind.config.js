@@ -3,6 +3,7 @@ var config = require("./config.json");
 const linkColor = config.linkColor;
 
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx, mdx}",
     "./components/**/*.{js,ts,jsx,tsx, mdx}",

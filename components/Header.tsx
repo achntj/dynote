@@ -35,10 +35,15 @@ const Header: React.FC = () => {
   
 
   return (
+    <>
     <nav className="flex justify-between p-2 px-4">
       {left}
       {inDevEnvironment && right}
     </nav>
+    <div className="px-4 text-gray-700 dark:text-slate-200">
+    {inDevEnvironment && "(Dev Mode)"}
+    </div>
+    </>
   );
 };
 

@@ -1,8 +1,5 @@
 import React from "react";
-import Router from "next/router";
-import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import superjson from 'superjson';
 
 export type PostProps = {
   id: number;

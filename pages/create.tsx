@@ -35,13 +35,14 @@ const Draft: React.FC = () => {
               Cancel
             </a>
             </div>
+            <div>
             <input
               autoFocus
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
               type="text"
               value={title}
-              className="w-full outline-none"
+              className="w-full outline-none bg-transparent"
             />
             <textarea
               cols={50}
@@ -49,8 +50,9 @@ const Draft: React.FC = () => {
               placeholder="Content"
               rows={8}
               value={content}
-              className="w-full outline-none h-auto resize-none"
+              className="w-full outline-none h-auto resize-none bg-transparent"
             />
+            </div>
           </form>
         </div>
         :
