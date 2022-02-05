@@ -1,5 +1,5 @@
 import React from "react";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Layout from "../components/Layout";
 import Post, { PostProps } from "../components/Post";
 import prisma from '../lib/prisma'
@@ -10,7 +10,7 @@ const name = config.name;
 const description = config.description;
 
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerProps: GetServerSideProps = async () => {
   let feed = await prisma.post.findMany({
     where: {
       published: true,
